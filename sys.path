@@ -1,5 +1,0 @@
-import sys
-import os
-
-# Add the yolov5 folder to Python's search path
-sys.path.append(os.path.join(os.getcwd(), 'yolov5'))
