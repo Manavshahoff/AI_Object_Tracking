@@ -1,2 +1,9 @@
 # Ignore the virtual environment
 venv/
+# Ignore YOLOv5 weights
+*.pt
+
+# Ignore unnecessary files in YOLOv5
+yolov5/.git
+yolov5/runs/
+yolov5/data/
