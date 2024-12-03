@@ -1,25 +1,19 @@
 import cv2
-
-# Replace with your video file path
-video_path = "sample_video.mp4"  # Update if necessary
-cap = cv2.VideoCapture(video_path)
+cap = cv2.VideoCapture(1)  # Use 0 for default webcam, 1 or 2 for other devices
 
 if not cap.isOpened():
-    print("Error: Cannot open video file")
-    exit()
+    print("Error: Could not open camera.")
+else:
+    print("Camera opened successfully!")
 
 while True:
-    # Read each frame from the video
     ret, frame = cap.read()
     if not ret:
-        print("End of video or error")
+        print("Error: Could not read frame.")
         break
 
-    # Display the frame in a window
-    cv2.imshow('Video Feed', frame)
-
-    # Exit when 'q' is pressed
-    if cv2.waitKey(25) & 0xFF == ord('q'):  # Adjust waitKey for frame rate
+    cv2.imshow("Test Webcam", frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
